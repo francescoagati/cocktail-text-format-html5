@@ -72,7 +72,11 @@ class Main extends Sprite {
 			</head>
 			<body>
 				<div id="content">
-				<center id="container">ciao</center>
+				<center id="container">
+				<div>EXTERNS</div>
+				<div>permettono di mappare librerie esterne</div>
+				<div>con il type system</div>
+				</center>
 				</div>
 			</body></html>
 		');
@@ -101,18 +105,7 @@ class Main extends Sprite {
 
 			messageField = new TextField();
 
-			//messageField.width = 800;
-			//messageField.height = 200;
-			//messageField.x = 100;
-			//messageField.y = 150; //(stage.height - messageField.height) / 2;
 
-			messageField.defaultTextFormat = messageFormat;
-			messageField.selectable = false;
-			messageField.text = "HAXE\nTHE CROSS PLATFORM TOOLKIT";
-
-			messageField.autoSize = CENTER;
-			messageField.width=600;
-			messageField.center();
 			var sprite =(html.root:Sprite);
 			sprite.center();
 
@@ -120,8 +113,8 @@ class Main extends Sprite {
 			sprite.fillHeight();
 
 
-			addChild(bitmap);
-			//addChild(html.root);
+			//addChild(bitmap);
+			addChild(html.root);
 
 			addChild(messageField);
 
@@ -163,16 +156,16 @@ class Main extends Sprite {
 			case _:slides.get();
 		};
 
-		messageField.text = text;
-		messageField.fillWidth();
-		messageField.fillHeight();
-		messageField.center();
+		//messageField.text = text;
+		//messageField.fillWidth();
+		//messageField.fillHeight();
+		//messageField.center();
 
-		//html.document.getElementById('container').innerHTML = text.split("\n").wrapsP();
-		//var sprite = (html.root:Sprite);
-		//sprite.center();
-		//sprite.fillWidth();
-		//sprite.fillHeight();
+		html.document.getElementById('container').innerHTML = text.split("\n").wrapsP();
+		var sprite = (html.root:Sprite);
+		sprite.center();
+		sprite.fillWidth();
+		sprite.fillHeight();
 
 
 	}
